@@ -5,26 +5,33 @@ import java.util.ArrayList;
 
 public class Persona {
     private String nombre;
+    private String genero;
     private Persona padre;
     private Persona madre;
     private ArrayList<Persona> hijos = new ArrayList<>();
     private ArrayList<Persona> hermanos = new ArrayList<>();
     
 
-    public Persona(String nombre, Persona padre, Persona madre) {
+    public Persona(String nombre, Persona padre, Persona madre,String genero) {
         this.nombre = nombre;
+        this.genero=genero;
         this.padre = padre;
         this.madre = madre;
     }
 
-    public Persona(String nombre) {
+    public Persona(String nombre,String genero) {
         this.nombre = nombre;
+        this.genero=genero;
     }
 
     public String getNombre() {
         return nombre;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+    
     public Persona getPadre() {
         return padre;
     }

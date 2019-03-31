@@ -11,15 +11,15 @@ public class Main {
         
         
         //bisabuelos
-        Persona bisa = new Persona("Don Carlos");
-        Persona bisa2 = new Persona("Esmeralda");
-        Persona bisa3 = new Persona("Miguel");
-        Persona bisa4 = new Persona("Rosa");
+        Persona bisa = new Persona("Don Carlos","m");
+        Persona bisa2 = new Persona("Esmeralda","f");
+        Persona bisa3 = new Persona("Miguel","m");
+        Persona bisa4 = new Persona("Rosa","f");
         //abuelos
-        Persona abue = new Persona("Manuel", bisa, bisa2);
-        Persona abue2 = new Persona("Gilda",bisa3,bisa4);
-        Persona abue3 = new Persona("Marcos",bisa3,bisa4);
-        Persona abue4 = new Persona("Estela",bisa3,bisa4);
+        Persona abue = new Persona("Manuel", bisa, bisa2,"m");
+        Persona abue2 = new Persona("Gilda",bisa3,bisa4,"f");
+        Persona abue3 = new Persona("Marcos",bisa3,bisa4,"m");
+        Persona abue4 = new Persona("Estela",bisa3,bisa4,"f");
         
         //seteo abuelos como hijos de los bisa
         bisa.addHijo(abue);
@@ -27,12 +27,12 @@ public class Main {
         bisa3.addHijo(abue2);
         bisa4.addHijo(abue2);
         //Creo papas
-        Persona papa = new Persona("Jorge",abue,abue2);
-        Persona papa2 = new Persona("Maria",abue3,abue4);
+        Persona papa = new Persona("Jorge",abue,abue2,"m");
+        Persona papa2 = new Persona("Maria",abue3,abue4,"f");
         //Creo tios
-        Persona tio = new Persona("Fernando",abue,abue2);
-        Persona tio2 = new Persona("Tomas",abue,abue2);
-        Persona tio3 = new Persona("Agustina",abue,abue2);
+        Persona tio = new Persona("Fernando",abue,abue2,"m");
+        Persona tio2 = new Persona("Tomas",abue,abue2,"m");
+        Persona tio3 = new Persona("Agustina",abue,abue2,"f");
         //Agrego hijos a los abuelos
         abue.addHijo(tio);
         abue.addHijo(tio2);
@@ -54,7 +54,7 @@ public class Main {
         tio3.addHermano(tio2);
         tio3.addHermano(papa);
         //Creo los hijos
-        Persona hijo = new Persona("Martin",papa,papa2);
+        Persona hijo = new Persona("Martin",papa,papa2,"m");
                 
         /*
             FIN HARDCODEO
@@ -65,11 +65,14 @@ public class Main {
         
         */
         
-        //imprimir nombre del papa del tio
-        System.out.println(tio.getPadre().getNombre());
+        Imprimir imprimir = new Imprimir();
+        imprimir.imprimirHermanas(papa);
+        imprimir.imprimirHermanos(papa);
         
-        //immprimir los nombres de los hermanos del papa
-        System.out.println(papa.traerNombreHermanos());
+//        imprimir.imprimirLista(papa.getHermanos());
+//        imprimir.imprimirLista(papa.getPadre().getHijos());
+//        imprimir.imprimirLista(papa.getHijos());
+            
         
         
     }
