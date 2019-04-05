@@ -23,7 +23,7 @@ public class Persona {
         this.nombre = nombre;
         this.genero=genero;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
