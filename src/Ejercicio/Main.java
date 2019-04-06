@@ -1,6 +1,9 @@
 
 package Ejercicio;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -34,25 +37,15 @@ public class Main {
         Persona tio2 = new Persona("Tomas",abue,abue2,"m");
         Persona tio3 = new Persona("Agustina",abue,abue2,"f");
         //Agrego hijos a los abuelos
-        abue.addHijo(tio);
-        abue.addHijo(tio2);
-        abue.addHijo(tio3);
-        abue2.addHijo(tio);
-        abue2.addHijo(tio2);
-        abue2.addHijo(tio3);
+        abue.addHijos(Arrays.asList(papa,tio, tio2, tio3));
+        abue2.addHijos(Arrays.asList(papa,tio, tio2, tio3));
         //Agrego a los tios como hermanos entre si
-        papa.addHermano(tio);
-        papa.addHermano(tio2);
-        papa.addHermano(tio3);
-        tio.addHermano(papa);
-        tio.addHermano(tio2);
-        tio.addHermano(tio3);
-        tio2.addHermano(tio);
-        tio2.addHermano(papa);
-        tio2.addHermano(tio3);
-        tio3.addHermano(tio);
-        tio3.addHermano(tio2);
-        tio3.addHermano(papa);
+        
+        papa.addHermanos(Arrays.asList(tio, tio2, tio3));
+        tio.addHermanos(Arrays.asList(papa, tio2, tio3));
+        tio2.addHermanos(Arrays.asList(papa, tio, tio3));
+        tio3.addHermanos(Arrays.asList(papa, tio, tio2));
+        
         //Creo los hijos
         Persona hijo = new Persona("Martin",papa,papa2,"m");
                 

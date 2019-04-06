@@ -2,6 +2,7 @@
 package Ejercicio;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Persona {
     private String nombre;
@@ -51,6 +52,16 @@ public class Persona {
     
     public void addHijo(Persona p){
         getHijos().add(p);
+    }
+    
+    public void addHijos(Collection<? extends Persona> hs)
+    {
+        getHijos().addAll(hs);
+    }
+    
+     public void addHermanos(Collection<? extends Persona> hs)
+    {
+        getHermanos().addAll(hs);
     }
     
     public void addHermano(Persona p){
