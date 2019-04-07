@@ -1,6 +1,7 @@
 package TestMethods;
 
 
+import Ejercicio.Imprimir;
 import Ejercicio.Persona;
 import java.util.Arrays;
 import org.junit.After;
@@ -28,6 +29,7 @@ public class NewEmptyJUnitTest {
         p = new Persona("Juan", "m");
         per2 = new Persona("Juana", "f");
         per3 = new Persona("Miguel", "f");
+        imp = new Imprimir();
     }
     
     @After
@@ -68,6 +70,12 @@ public class NewEmptyJUnitTest {
     }
     
     @Test
+    public void createNullPerson(){
+        Persona l = null;
+        assertEquals(null,l.getNombre());
+    }
+    
+    @Test
     public void testGetHijosWhenNoHay(){
         assertEquals(true, p.getHijos().isEmpty());
     }
@@ -91,16 +99,36 @@ public class NewEmptyJUnitTest {
     }
     
     @Test
+    public void testAddHermanos(){
+        p.addHermanos(Arrays.asList(per2, per3));
+        assertEquals(false, p.getHermanos().isEmpty());
+    }
+    
+    @Test
     public void testAddHijosNullos(){
         p.addHijos(Arrays.asList(null, null));
         assertEquals(true, p.getHijos().isEmpty());
     }
+    
+
+    
+    /*
+    Los metodos de la clase imprimir son todos iguales usan metodos que se testean
+    arriba e imprimen el contenido, Como son metodos void no se pueden testear.
+    */
+    
+//    
+//    @Test
+//    public void testImprimirPersonaNull(){
+//        assertEquals(null, imp.imprimirPersona(p));
+//    }
     
     
     
     private Persona p;
     private Persona per2;
     private Persona per3;
+    private Imprimir imp;
     
     
 
