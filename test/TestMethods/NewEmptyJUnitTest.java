@@ -78,8 +78,8 @@ public class NewEmptyJUnitTest {
         }catch(NullPointerException e){
             error=String.valueOf(e);
         }
-        assertNotEquals("",error);
-        //assertEquals("",error);
+        //assertNotEquals("",error);
+        assertEquals("",error);
     }
     
     @Test
