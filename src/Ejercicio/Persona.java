@@ -51,20 +51,25 @@ public class Persona {
     
     
     public void addHijo(Persona p){
+        if(p==null)return;
+        if(p.equals(this))return;
         getHijos().add(p);
     }
     
     public void addHijos(Collection<? extends Persona> hs)
     {
+        if(hs.isEmpty() || hs.contains(null)) return;
         getHijos().addAll(hs);
     }
     
      public void addHermanos(Collection<? extends Persona> hs)
     {
+        if(hs.isEmpty() || hs.contains(null)) return;
         getHermanos().addAll(hs);
     }
     
     public void addHermano(Persona p){
+        if(p==null)return;
         getHermanos().add(p);
     }
     

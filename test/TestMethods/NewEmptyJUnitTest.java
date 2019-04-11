@@ -41,7 +41,7 @@ public class NewEmptyJUnitTest {
     {
         p.addHijo(per2);
         assertNotEquals(-1, p.getHijos().indexOf(per2) );
-    }
+    }   
     
     @Test
     public void testAddHijoNull()
@@ -71,7 +71,7 @@ public class NewEmptyJUnitTest {
     
     @Test
     public void createNullPerson(){
-        Persona l = null;
+        Persona l=null;
         assertEquals(null,l.getNombre());
     }
     
