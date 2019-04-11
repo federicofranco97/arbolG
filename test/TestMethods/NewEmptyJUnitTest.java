@@ -71,8 +71,15 @@ public class NewEmptyJUnitTest {
     
     @Test
     public void createNullPerson(){
-        Persona l=null;
-        assertEquals(null,l.getNombre());
+        
+        String error="";
+        try{
+            Persona l=null;            
+        }catch(NullPointerException e){
+            error=String.valueOf(e);
+        }
+        assertNotEquals("",error);
+        //assertEquals("",error);
     }
     
     @Test
