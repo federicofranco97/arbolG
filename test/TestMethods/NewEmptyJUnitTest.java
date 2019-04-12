@@ -69,18 +69,6 @@ public class NewEmptyJUnitTest {
         assertEquals("m",l.getGenero() );
     }
     
-    @Test
-    public void createNullPerson(){
-        
-        String error="";
-        try{
-            Persona l=null;            
-        }catch(NullPointerException e){
-            error=String.valueOf(e);
-        }
-        //assertNotEquals("",error);
-        assertEquals("",error);
-    }
     
     @Test
     public void testGetHijosWhenNoHay(){
